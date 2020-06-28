@@ -1,0 +1,181 @@
+ <!-- in plain old HTML -->
+ <!DOCTYPE HTML>
+ <html>
+   <head>
+    <link href="dndstyle.css" rel="stylesheet">
+    <link href="audiopl.css" rel="stylesheet">
+           <link href="audiopl.css" rel="stylesheet">
+    <script type = "text/javascript" src="functions.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="audioPlayer.js"></script>
+     </head>
+ <body>
+
+<div class="wrapper">
+    
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>About D&amp;D Combat Assistant </h2>
+    </div>
+    <div class="modal-body">
+         <p>This application was made by Renadam for our Spring 2019 CMPSCI 390 course. </p>
+    </div>
+  </div> <!--END  Modal content -->
+
+</div> <!-- END The Modal -->
+    
+  <header class="header">
+        <ul>
+            <li><a href="#" class="active">Save</a></li>
+            <li><a href="#">New Game</a></li>
+            <li><a href="#">Get Code</a></li>
+            <li><a href="#" id="myBtn">About</a></li>
+        </ul>  
+  </header> <!-- END HEADER -->
+    
+  <article class="main"> <!-- MIDDLE CONTENT -->
+   
+    <div id="audioDiv"> <!-- AUDIO SECTION -->
+        
+        <div style="padding-top: 10px;"> <!-- adding padding to top -->
+        
+        <audio src="" controls id="audioPlayerE" style="height:47px;  width: 240px; font-size: 9pt;">
+            Sorry, your browser doesn't support html5!
+        </audio>        
+        
+        <div class="dropdown">
+            <button class="dropbtn" id="env"><img src="icons/globe.svg" width="26px"></button>
+            <div class="dropdown-content">
+                <ul id="playlistE">
+                    <li><a href="mp3/envir/HALF%20HOUR%20of%20Relaxing%20Ocean%20Wave%20Sounds%20-%20Meditation,%20Relax,%20Sleep,%20Study,%20Massage,%20Zen,%20Yoga.mp3" class="Elist">Relaxing Ocean</a></li>
+                    <li><a href="mp3/envir/Medieval%20tavern%20inn%20sound%20effect.mp3" class="Elist">Inn</a></li>
+                    <li><a href="mp3/envir/Nature%20Therapy%20Relaxing%20Full%20Motion%20Forestry%20with%20Natural%20Sounds.mp3" class="Elist">Forest</a></li>
+                </ul>
+            </div>
+        </div>
+        <audio src="" controls id="audioPlayerSE" style="height:47px;width: 240px; font-size: 9pt;">
+            Sorry, your browser doesn't support html5!
+        </audio>   
+        
+         <div class="dropdown">
+            <button class="dropbtn" id="sfx"><img src="icons/clean.svg" width="26px"></button>
+            <div class="dropdown-content">
+                <ul id="playlistSE">
+                    <li><a href="mp3/fxs/Crowd%20panic%20sound%20effect.mp3" class="SElist">Crowd Panic</a></li>
+                    <li><a href="mp3/fxs/Dragon%20Roar%20Maya%20+%20Dragon%20roar%20sound%20effect%20download.mp3" class="SElist">Dragon Roar</a></li>
+                     <li><a href="mp3/fxs/Fire%20Sound%20Effect.mp3" class="SElist">Fire</a></li>
+                    <li><a href="mp3/fxs/Panting%20Male%20Sound%20Effect.mp3" class="SElist">Male Panting</a></li>
+                </ul>
+            </div>
+        </div>
+            
+        <audio src="" controls id="audioPlayerB" style="height:47px; width: 240px; font-size: 9pt;">
+            Sorry, your browser doesn't support html5!
+        </audio>       
+        
+         <div class="dropdown">
+            <button class="dropbtn" id="battle"><img src="icons/music.svg" width="24px"></button>
+            <div class="dropdown-content">
+                <ul id="playlistB">
+                    <li><a href="mp3/music/Epic%20Music%20Soundtracks%20(Battle%20Music,%2042min).mp3" class="Blist">Epicc</a></li>
+                </ul>
+            </div>
+        </div>    
+        
+        </div> <!-- END  adding padding to top -->
+
+    
+    </div> <!-- END    AUDIO SECTION -->
+    
+    <div id="combatDiv"> <!-- COMBAT SECTION -->
+        
+    Here goes the files that are pulled up via the files on the right. Adding later.
+      
+    </div> <!-- END COMBAT SECTION -->
+      
+      
+  </article> <!-- END     MIDDLE CONTENT -->
+  <aside class="aside aside-1"> <!-- DICE LEFT SIDEBAR -->
+    
+    <div style="height: 20%; padding: 10px;">  <!-- INPUT DICE DIV -->
+      
+        <form name="quickD" action="javascript:void(0);" onsubmit="return quickDice()">
+        input dice: <input type="text" name="quickDinput" placeholder="4d10">
+        <input type="submit" value="Submit">
+    </form>
+        <br>
+        <div id="displayQuickDice" style="width: 95%; overflow: auto; max-height: 50%;">
+        <br><br>
+        </div>
+      
+    </div> <!-- END     INPUT DICE DIV -->
+    
+    <div style="padding: 10px;">  <!-- QUICK DICE DIV -->
+      
+        <table width="30%" style="float: left;">
+            <tr>
+                <td>
+                    <button id="d4-CSS" onclick="rollDiceV(4,1)"></button><br>
+                    <button id="d6-CSS" onclick="rollDiceV(6,1)"></button><br>
+                    <button id="d8-CSS" onclick="rollDiceV(8,1)"></button><br>
+                    <button id="d10-CSS" onclick="rollDiceV(10,1)"></button><br>
+                    <button id="d100-CSS" onclick="rollDiceV(10,10)"></button><br>
+                    <button id="d12-CSS" onclick="rollDiceV(12,1)"></button><br>
+                    <button id="d20-CSS" onclick="rollDiceV(20,1)"></button>
+                </td>
+            </tr>
+        </table>
+      
+        <div style="float: right; width: 60%;">
+            <p id="displayDiceV" style="font-size: 2em;">1d20: 20</p>
+            <h2>History</h2>
+            <div id="displayDiceH" style="background: white; overflow: auto; width:100%; min-height: 200px; resize: vertical;">
+            </div>
+            <button id="clearButton-CSS" type="button" onclick="clearDiceH()">Clear History</button>
+            <br>
+        </div> 
+      
+      
+    </div> <!-- END      QUICK DICE DIV -->
+        
+    
+    </aside> <!-- END     DICE LEFT SIDEBAR -->
+    
+    
+  <aside class="aside aside-2"> <!-- RIGHT SIDEBAR -->
+      
+    <div id="filesDiv"> <!-- FILES DIV -->
+        
+        Here goes the files, called 'encounters'. Add encounter, add page to encounter. When you click on an encounter its opens in the middle. 
+    
+    </div> <!-- END     FILES DIV -->
+      
+    
+    <div id="initiativeDiv"> <!-- INIT DIV -->
+        Here goes the initiative order. Able to click and drag around? Also input #'s. 
+    
+    </div> <!-- END     INIT DIV -->
+    
+  </aside> <!-- END     RIGHT SIDEBAR -->
+    
+    
+    
+  <footer class="footer"><br>Made By Renadam TM 2019</footer>
+</div>
+
+      <script type = "text/javascript" src="functions.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="audioPlayer.js"></script>
+     <script src="modal.js"></script>
+     
+        <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="audioPlayer.js"></script>
+    <script type="text/javascript">
+ 
+ </body>
+  </html>
